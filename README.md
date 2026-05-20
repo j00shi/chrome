@@ -20,7 +20,7 @@ For the Firefox theme I recommend using [Adaptive Tab Bar Colour](https://addons
 
 ##### Sidebery
 
-**Import:** Go to the Sibery settings (right click on the extension > Open settings). Navigate to Help and then Import addon data. Select the sidebery-snapshot-\*.json file.
+**Import:** Go to the Sibery settings (right click on the extension > Open settings). Navigate to Help and then Import addon data. Select the configs/sidebery-data-\*.json file.
 
 **Export:** If you want to export you own config, go to the Sidebery settings > Help > Export addon data. I recommend you export these things:
 
@@ -52,13 +52,11 @@ linear-gradient(35deg, #FFE041 16.6%, #FD944C 16.6% 33.3%, #FF453C 33.3% 50%, #D
 ```
 
 - [Frieren theme](https://color.firefox.com/?theme=XQAAAAJ_AgAAAAAAAABBqYhm849SCicxcUEYWXcGHf3p79Ffm06OXtakGWB8WYVdiUdfldDIGArGklQf50jaX9NN8B5fVQPonLqdk35VeXM7E0yS6P7GsqCjYnLpplaMrAbZPb8aLjvIqyA-K_qwkRaz-7ANQyWmD96w0RqD2fckVgMY-FP1JqkMy3XkxiRE2DDkWShloPr0yVA8WvLvhtgvKfgm-ZwYJJcO_i7j0B9gqyHh4F7kBhcucyhgDeS-S6_SMzcAHTowWts_1ug4yh3h5qWpJSRSGfxm_7LKCSzphWWw-DzvuubU98Ri80XziXqevKXH7Fganb2Apy7iZzrIRhAloAJzuJFhC7bWwUhebL4cPNhsXyxF-Ap6_g2yXQ)
-    - Side bar gradient for Frieren theme:
+    - Side and top bar gradient for Frieren theme:
 
 ```css
 linear-gradient(90deg, rgba(28,87,145,1) 0%, rgba(26,85,144,1) 30%, rgba(157,168,192,1) 50%, rgba(46,105,167,1) 78%, rgba(194,103,117,1) 90%, rgba(129,157,185,1) 97%);
 ```
-
-    - Top bar gradient for Frieren theme:
 
 ```css
 linear-gradient(180deg, rgba(28,87,145,1) 0%, rgba(75,123,171,1) 40%, rgba(233,229,228,1) 60%, rgba(128,160,198,1) 80%, rgba(244,114,122,1) 90%, rgba(44,70,93,1) 98%);
