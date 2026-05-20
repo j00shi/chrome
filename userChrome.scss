@@ -8,7 +8,9 @@
 
 // Remove green dot (attention badge) from extension buttons
 #unified-extensions-button[attention] > .toolbarbutton-icon,
-.unified-extensions-item[attention] > .unified-extensions-item-action-button.toolbarbutton-1 > .toolbarbutton-badge-stack {
+.unified-extensions-item[attention]
+	> .unified-extensions-item-action-button.toolbarbutton-1
+	> .toolbarbutton-badge-stack {
 	background-image: none !important;
 }
 
@@ -20,8 +22,8 @@
 // TODO: Not working when sidebar is on the right side
 
 // Sidebar base styling for Sidebery or similar extensions
-#sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] {
-	position: absolute;	// Replace with relative to move tab content
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+	position: absolute; // Replace with relative to move tab content
 	width: var(--sidebar-width) !important;
 	height: 100vh;
 	min-width: unset !important;
@@ -49,12 +51,14 @@
 		left: var(--expanded-width);
 		border: none !important;
 		opacity: 0;
-		transition: top .3s ease-in-out, opacity .15s linear;
-		
+		transition:
+			top 0.3s ease-in-out,
+			opacity 0.15s linear;
+
 		#sidebar-switcher-target {
 			background-color: var(--toolbox-bgcolor) !important;
 			border-radius: 10px !important;
-			padding: .75rem !important;
+			padding: 0.75rem !important;
 		}
 
 		#sidebar-close {
@@ -71,12 +75,14 @@
 		right: -15px;
 		z-index: 100;
 		background-color: var(--lwt-accent-color);
-		clip-path: path('M 0,0 L 15,0 A 15 15 0 0 0 0,15 Z');
+		clip-path: path("M 0,0 L 15,0 A 15 15 0 0 0 0,15 Z");
 	}
 }
 
 // Adds a margin to the side except when in DOM Fullscreen
-:root:not([inDOMFullscreen=true]) #sidebar-box[sidebarcommand=_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action] ~ #tabbrowser-tabbox {
+:root:not([inDOMFullscreen="true"])
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
+	~ #tabbrowser-tabbox {
 	margin-left: var(--sidebar-width) !important;
 }
 
@@ -106,25 +112,41 @@
 	}
 }
 
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button), (-moz-platform: linux) and (-moz-gtk-csd-close-button) {
+@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-close-button),
+	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button),
+	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button),
+	(-moz-platform: linux) and (-moz-gtk-csd-close-button) {
 	#nav-bar {
 		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 1);
 	}
 }
 
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button),
+	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
+	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
+	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
 	#nav-bar {
 		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 2);
 	}
 }
 
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
+@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button),
+	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
 	#nav-bar {
 		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 3);
 	}
 }
 
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
+@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)),
+	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)),
+	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)),
+	(-moz-platform: linux) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
 	#nav-bar {
 		padding-right: 120px !important;
 	}
@@ -133,7 +155,12 @@
 	}
 }
 
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement), (-moz-platform: linux) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement) {
+@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement),
+	(-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement),
+	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement),
+	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement),
+	(-moz-platform: linux) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement) {
 	#nav-bar {
 		padding-left: 120px !important;
 	}
