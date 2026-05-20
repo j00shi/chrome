@@ -19,9 +19,6 @@ Desktop.ini
 *.tmp
 *.bak
 
-# VSCode settings (if applicable)
-.vscode/
-
 # Log files
 *.log
 
