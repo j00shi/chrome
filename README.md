@@ -27,9 +27,11 @@ For the Firefox theme, I recommend using [Adaptive Tab Bar Colour](https://addon
 **Export:** If you want to export your own config, go to the Sidebery settings > Help > Export addon data. I recommend you export these things:
 
 - Settings
-- Containers config
+- Containers config (if you use them)
 - Panels and navigation bar
 - Styles
+
+_I recommend the other settings only for private backups and not sharing._
 
 ##### Adaptive Tab Bar Colour
 
