@@ -117,3 +117,4 @@ _Otherwise, custom CSS is ignored._
 ## Ideas
 
 - Rewrite userContent from scratch and add `* { all: initial; }` to ignore default styling (might prevent updates from breaking things so often)
+- Make popup for tabs work
