@@ -29,6 +29,14 @@
 	}
 }
 
+.tile {
+	backdrop-filter: blur(5px);
+	background: rgba(255, 255, 255, 0.05) !important;
+	box-shadow:
+		rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+		rgba(200, 200, 200, 0.15) 0px 0px 0px 1px !important;
+}
+
 @keyframes barrelRoll {
 	to {
 		rotate: 1turn;
