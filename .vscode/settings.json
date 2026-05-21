@@ -1,9 +1,14 @@
 {
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"liveSassCompile.settings.showOutputWindowOn": "Error",
 	"liveSassCompile.settings.formats": [
 		{
 			"format": "compressed",
 			"extensionName": ".css",
 			"savePath": "~/"
 		}
-	]
+	],
+	"prettier.tabWidth": 4,
+	"prettier.useTabs": true
 }
