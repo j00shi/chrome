@@ -111,3 +111,4 @@ _Otherwise, custom CSS is ignored._
 
 - [ ] Simplify styleEditor.css
 - [ ] Replace hardcoded values with variables
+- [ ] Fix sidebar menu being glitchy in top bar
