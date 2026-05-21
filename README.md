@@ -112,3 +112,7 @@ _Otherwise, custom CSS is ignored._
 - [ ] Simplify styleEditor.css
 - [ ] Replace hardcoded values with variables
 - [ ] Fix sidebar menu being glitchy in top bar
+
+## Ideas
+
+- Rewrite userContent from scratch and add `* { all: initial; }` to ignore default styling (might prevent updates from breaking things so often)
