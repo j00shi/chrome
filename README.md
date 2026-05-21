@@ -22,12 +22,11 @@ For the Firefox theme, I recommend using [Adaptive Tab Bar Colour](https://addon
 
 ##### Sidebery
 
-**Import:** Go to the Sibery settings (right click on the extension > Open settings). Navigate to Help and then Import addon data. Select the configs/sidebery-data-\*.json file.
+**Import:** Go to the Sibery settings (right click on the extension > Open settings). Navigate to Help and then Import addon data. Select the newest configs/sidebery-data-\*.json file.
 
 **Export:** If you want to export your own config, go to the Sidebery settings > Help > Export addon data. I recommend you export these things:
 
 - Settings
-- Context menu
 - Containers config
 - Panels and navigation bar
 - Styles
