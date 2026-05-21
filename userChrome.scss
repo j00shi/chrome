@@ -178,4 +178,34 @@
 		align-items: center;
 		z-index: 10;
 	}
-} /*# sourceMappingURL=userChrome.css.map */
+}
+
+/* ===========================
+   Windows specific styles
+   =========================== */
+@media (-moz-platform: windows), (-moz-platform: windows-win10) {
+	// Set toolbar height variable for Windows
+	:root:not([uidensity="compact"]) {
+		--uc-toolbar-height: 38px;
+	}
+
+	// Show window controls in nav-bar (Windows)
+	#nav-bar .titlebar-buttonbox-container {
+		display: flex !important;
+	}
+
+	// Remove negative margin from nav-bar so it sits flush at the top
+	:root:not([inFullscreen]) #nav-bar {
+		margin-top: calc(0px - var(--uc-toolbar-height));
+		z-index: 2;
+	}
+
+	// Menubar sizing and positioning
+	#toolbar-menubar {
+		min-height: unset !important;
+		height: var(--uc-toolbar-height) !important;
+		position: relative;
+	}
+}
+
+/*# sourceMappingURL=userChrome.css.map */

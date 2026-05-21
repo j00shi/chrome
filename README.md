@@ -89,14 +89,23 @@ _Otherwise, custom CSS is ignored._
 
 ---
 
-## Explanation
+## Explanation & Tips
 
 - SCSS files compile to CSS using VSCode extensions like Live Sass Compiler.
 - Use Prettier for code formatting
 - File Structure:
+    - chrome/ → Where Firefox locates the custom styles userChrome.css and userContent.css.
     - styleEditor.css → Is the custom styling for the Sidebery sidebar.
     - userChrome.css → Custom styling for the entire Firefox browser.
     - userContent.css → Custom styling for the Firefox Home page.
+
+### How to Enable the Browser Toolbox
+
+1. Open the Developer Tools Settings (click the ⋯ menu in the DevTools window).
+2. Go to the Advanced Settings section.
+3. Check the boxes for:
+    - Enable browser chrome and add-on debugging toolboxes
+    - Enable remote debugging
 
 ## TODO
 
