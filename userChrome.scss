@@ -90,7 +90,7 @@
 	MacOS specific styles
 	=========================== */
 @media (-moz-platform: macos) {
-	:root #nav-bar:not([inFullscreen]) {
+	:root #nav-bar:not([fullscreentoolbar]) {
 		padding-left: 80px !important;
 	}
 
