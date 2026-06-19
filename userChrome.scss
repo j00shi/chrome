@@ -90,11 +90,15 @@
 	MacOS specific styles
 	=========================== */
 @media (-moz-platform: macos) {
-	:root #nav-bar:not([fullscreentoolbar]) {
-		padding-left: 80px !important;
+	#nav-bar {
+		transition: padding ease-in-out 0.5s !important;
+
+		#main-window:not([inFullscreen]) & {
+			padding-left: 80px !important;
+		}
 	}
 
-	:root #TabsToolbar .titlebar-buttonbox-container {
+	#TabsToolbar .titlebar-buttonbox-container {
 		position: absolute;
 		display: block;
 		visibility: visible !important;
