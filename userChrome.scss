@@ -47,13 +47,13 @@
 
 	#sidebar-header {
 		position: absolute;
-		top: -48px;
+		top: -100px;
 		left: var(--expanded-width);
 		border: none !important;
 		opacity: 0;
 		transition:
-			top 0.3s ease-in-out,
-			opacity 0.15s linear;
+			top 0.4s ease-in-out,
+			opacity 0.4s;
 
 		#sidebar-switcher-target {
 			background-color: var(--toolbox-bgcolor) !important;
