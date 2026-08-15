@@ -3,7 +3,7 @@
 This project uses various extensions and stylesheets to enhance the Firefox aesthetic and functionality.
 
 > [!important] Major Changes!
-> Styling from [MacTahoe-gtk-theme](https://github.com/vinceliuice/MacTahoe-gtk-theme/tree/main/other/firefox) was added to this project. To opt out, simply comment out `@import "MacTahoe/theme-adaptive.css"; /**/` in userChrome.css.
+> Styling from [MacTahoe-gtk-theme](https://github.com/vinceliuice/MacTahoe-gtk-theme/tree/main/other/firefox) was added to this project. To opt in, simply uncomment `@import "MacTahoe/theme-adaptive.css"; /**/` in userChrome.css.
 
 ## Screenshots
 
