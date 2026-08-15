@@ -36,6 +36,8 @@ For the Firefox theme, I recommend using [Adaptive Tab Bar Colour](https://addon
 
 _I recommend the other settings only for private backups and not sharing._
 
+_Note: The horizontal scrolling is somewhat broken, hence why it was limited to one panel per scroll. Also, the settings only apply after reopening the sidebar._
+
 ##### Adaptive Tab Bar Colour
 
 Not much to configure, but you can go into the extension preferences (in about:addons) and under Advanced change the Home page color to whatever you like.
