@@ -2,6 +2,9 @@
 
 This project uses various extensions and stylesheets to enhance the Firefox aesthetic and functionality.
 
+> [!important] Major Changes!
+> Styling from [MacTahoe-gtk-theme](https://github.com/vinceliuice/MacTahoe-gtk-theme/tree/main/other/firefox) was added to this project. To opt out, simply comment out `@import "MacTahoe/theme-adaptive.css"; /**/` in userChrome.css.
+
 ## Screenshots
 
 ![2026-05-20](./screenshots/2026-05-20.png)
@@ -113,8 +116,3 @@ _Otherwise, custom CSS is ignored._
 - [ ] Simplify styleEditor.css
 - [ ] Replace hardcoded values with variables
 - [ ] Fix sidebar menu being glitchy in top bar
-
-## Ideas
-
-- Rewrite userContent from scratch and add `* { all: initial; }` to ignore default styling (might prevent updates from breaking things so often)
-- Make popup for tabs work
