@@ -13,6 +13,11 @@
 		}
 	}
 
+	// Button box: fill nav-bar height, center buttons vertically
+	.titlebar-buttonbox-container {
+		padding: 0 14px !important;
+	}
+
 	// Base button styling
 	#nav-bar,
 	#titlebar {
@@ -22,8 +27,7 @@
 			border-radius: 100px !important;
 			height: 16px;
 			width: 16px;
-			margin: 16px 6px !important;
-			padding: 2px 0 !important;
+			margin: auto 6px !important;
 			background-repeat: no-repeat !important;
 			background-position: center !important;
 			background-size: contain !important;
@@ -38,11 +42,6 @@
 				opacity: 0.35 !important;
 			}
 		}
-	}
-
-	// Button box padding for 14px gap on sides
-	.titlebar-buttonbox-container {
-		padding: 0 14px !important;
 	}
 
 	// Close button

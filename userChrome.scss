@@ -122,73 +122,36 @@
 	#navigator-toolbox {
 		overflow: hidden !important;
 	}
-}
 
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-close-button),
-	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button),
-	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button),
-	(-moz-platform: linux) and (-moz-gtk-csd-close-button) {
-	#nav-bar {
-		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 1);
+	// Hide menu bar and tabs toolbar button boxes
+	#toolbar-menubar,
+	#TabsToolbar {
+		& > .titlebar-buttonbox-container {
+			display: none !important;
+		}
 	}
-}
 
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button),
-	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button),
-	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-close-button),
-	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
-	#nav-bar {
-		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 2);
-	}
-}
-
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button),
-	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-close-button) {
-	#nav-bar {
-		--uc-navbar-padding: calc(var(--uc-win-ctrl-btn-width) * 3);
-	}
-}
-
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)),
-	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (not (-moz-gtk-csd-reversed-placement)),
-	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (not (-moz-gtk-csd-reversed-placement)),
-	(-moz-platform: linux) and (-moz-gtk-csd-close-button) and (not (-moz-gtk-csd-reversed-placement)) {
-	#nav-bar {
-		padding-right: 120px !important;
-	}
-	.titlebar-buttonbox-container {
-		right: 0;
-	}
-}
-
-@media (-moz-gtk-csd-available) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement),
-	(-moz-gtk-csd-available) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement),
-	(-moz-platform: linux) and (-moz-gtk-csd-minimize-button) and (-moz-gtk-csd-reversed-placement),
-	(-moz-platform: linux) and (-moz-gtk-csd-maximize-button) and (-moz-gtk-csd-reversed-placement),
-	(-moz-platform: linux) and (-moz-gtk-csd-close-button) and (-moz-gtk-csd-reversed-placement) {
-	#nav-bar {
-		padding-left: 120px !important;
-	}
-	.titlebar-buttonbox-container {
-		left: 0;
-	}
-}
-
-@media (-moz-gtk-csd-available), (-moz-platform: linux) {
-	#nav-bar .titlebar-buttonbox-container {
+	// Let buttons push other nav-bar content via flex flow
+	#nav-bar > .titlebar-buttonbox-container {
 		display: flex !important;
-		position: absolute !important;
-		top: 0;
-		height: 100%;
+		-moz-appearance: none !important;
+		flex-shrink: 0 !important;
 		align-items: center;
-		z-index: 10;
+		position: relative !important;
+	}
+
+	// Right side: buttons go to the end
+	@media not (-moz-gtk-csd-reversed-placement) {
+		#nav-bar > .titlebar-buttonbox-container {
+			order: 1;
+		}
+	}
+
+	// Left side: buttons go to the start
+	@media (-moz-gtk-csd-reversed-placement) {
+		#nav-bar > .titlebar-buttonbox-container {
+			order: -1;
+		}
 	}
 }
 
