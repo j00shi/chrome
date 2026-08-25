@@ -6,6 +6,10 @@
 	--sidebar-width: 42px;
 }
 
+// macOS-style window control buttons for Linux
+// Comment out this import to use default Linux window controls
+@import "macos-window-controls";
+
 // Remove green dot (attention badge) from extension buttons
 #unified-extensions-button[attention] > .toolbarbutton-icon,
 .unified-extensions-item[attention]

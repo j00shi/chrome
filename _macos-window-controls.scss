@@ -1,0 +1,168 @@
+// macOS-style window control buttons for Linux/GTK
+// Uses SVGs from titlebuttons/ directory
+// Comment out the @import in userChrome.scss to disable
+
+@namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+@media (-moz-gtk-csd-available), (-moz-platform: linux) {
+	// Hide native button icons
+	#nav-bar,
+	#titlebar {
+		.titlebar-button .toolbarbutton-icon {
+			opacity: 0 !important;
+		}
+	}
+
+	// Base button styling
+	#nav-bar,
+	#titlebar {
+		.titlebar-button {
+			-moz-appearance: none !important;
+			border: none !important;
+			border-radius: 100px !important;
+			height: 16px;
+			width: 16px;
+			margin: 16px 6px !important;
+			padding: 2px 0 !important;
+			background-repeat: no-repeat !important;
+			background-position: center !important;
+			background-size: contain !important;
+			--inactive-titlebar-opacity: 1 !important;
+		}
+
+		&:-moz-window-inactive {
+			.titlebar-button {
+				opacity: 1 !important;
+			}
+			.titlebar-button[disabled="true"] {
+				opacity: 0.35 !important;
+			}
+		}
+	}
+
+	// Button box padding for 14px gap on sides
+	.titlebar-buttonbox-container {
+		padding: 0 14px !important;
+	}
+
+	// Close button
+	#nav-bar .titlebar-close,
+	#titlebar .titlebar-close,
+	#titlebar #titlebar-close {
+		background-image: url("titlebuttons/close.svg") !important;
+	}
+	#nav-bar .titlebar-close:hover,
+	#titlebar .titlebar-close:hover,
+	#titlebar #titlebar-close:hover {
+		background-image: url("titlebuttons/close-hover.svg") !important;
+	}
+	#nav-bar .titlebar-close:active,
+	#titlebar .titlebar-close:active,
+	#titlebar #titlebar-close:active {
+		background-image: url("titlebuttons/close-active.svg") !important;
+	}
+
+	// Minimize button
+	#nav-bar .titlebar-min,
+	#titlebar .titlebar-min,
+	#titlebar #titlebar-min {
+		background-image: url("titlebuttons/minimize.svg") !important;
+	}
+	#nav-bar .titlebar-min:hover,
+	#titlebar .titlebar-min:hover,
+	#titlebar #titlebar-min:hover {
+		background-image: url("titlebuttons/minimize-hover.svg") !important;
+	}
+	#nav-bar .titlebar-min:active,
+	#titlebar .titlebar-min:active,
+	#titlebar #titlebar-min:active {
+		background-image: url("titlebuttons/minimize-active.svg") !important;
+	}
+
+	// Maximize button
+	#nav-bar .titlebar-max,
+	#titlebar .titlebar-max,
+	#titlebar #titlebar-max {
+		background-image: url("titlebuttons/maximize.svg") !important;
+	}
+	#nav-bar .titlebar-max:hover,
+	#titlebar .titlebar-max:hover,
+	#titlebar #titlebar-max:hover {
+		background-image: url("titlebuttons/maximize-hover.svg") !important;
+	}
+	#nav-bar .titlebar-max:active,
+	#titlebar .titlebar-max:active,
+	#titlebar #titlebar-max:active {
+		background-image: url("titlebuttons/maximize-active.svg") !important;
+	}
+
+	// Restore button (when maximized, shows unmaximize icon)
+	#nav-bar .titlebar-restore,
+	#titlebar .titlebar-restore,
+	#titlebar #titlebar-restore,
+	:root[sizemode="maximized"] #nav-bar .titlebar-max,
+	:root[sizemode="maximized"] #titlebar .titlebar-max,
+	:root[sizemode="maximized"] #titlebar #titlebar-max {
+		background-image: url("titlebuttons/restore.svg") !important;
+	}
+	#nav-bar .titlebar-restore:hover,
+	#titlebar .titlebar-restore:hover,
+	#titlebar #titlebar-restore:hover,
+	:root[sizemode="maximized"] #nav-bar .titlebar-max:hover,
+	:root[sizemode="maximized"] #titlebar .titlebar-max:hover,
+	:root[sizemode="maximized"] #titlebar #titlebar-max:hover {
+		background-image: url("titlebuttons/restore-hover.svg") !important;
+	}
+	#nav-bar .titlebar-restore:active,
+	#titlebar .titlebar-restore:active,
+	#titlebar #titlebar-restore:active,
+	:root[sizemode="maximized"] #nav-bar .titlebar-max:active,
+	:root[sizemode="maximized"] #titlebar .titlebar-max:active,
+	:root[sizemode="maximized"] #titlebar #titlebar-max:active {
+		background-image: url("titlebuttons/restore-active.svg") !important;
+	}
+
+	// Backdrop state (inactive window) - all buttons turn gray
+	#nav-bar:-moz-window-inactive .titlebar-close,
+	#titlebar:-moz-window-inactive .titlebar-close,
+	#titlebar:-moz-window-inactive #titlebar-close,
+	#nav-bar:-moz-window-inactive .titlebar-max,
+	#titlebar:-moz-window-inactive .titlebar-max,
+	#titlebar:-moz-window-inactive #titlebar-max,
+	#nav-bar:-moz-window-inactive .titlebar-min,
+	#titlebar:-moz-window-inactive .titlebar-min,
+	#titlebar:-moz-window-inactive #titlebar-min,
+	#nav-bar:-moz-window-inactive .titlebar-restore,
+	#titlebar:-moz-window-inactive .titlebar-restore,
+	#titlebar:-moz-window-inactive #titlebar-restore,
+	:root[sizemode="maximized"] #nav-bar:-moz-window-inactive .titlebar-max,
+	:root[sizemode="maximized"] #titlebar:-moz-window-inactive .titlebar-max,
+	:root[sizemode="maximized"] #titlebar:-moz-window-inactive #titlebar-max {
+		background-image: url("titlebuttons/backdrop.svg") !important;
+	}
+
+	// Backdrop hover - gray circle with symbol
+	#nav-bar:-moz-window-inactive .titlebar-close:hover,
+	#titlebar:-moz-window-inactive .titlebar-close:hover,
+	#titlebar:-moz-window-inactive #titlebar-close:hover {
+		background-image: url("titlebuttons/backdrop-close.svg") !important;
+	}
+	#nav-bar:-moz-window-inactive .titlebar-min:hover,
+	#titlebar:-moz-window-inactive .titlebar-min:hover,
+	#titlebar:-moz-window-inactive #titlebar-min:hover {
+		background-image: url("titlebuttons/backdrop-minimize.svg") !important;
+	}
+	#nav-bar:-moz-window-inactive .titlebar-max:hover,
+	#titlebar:-moz-window-inactive .titlebar-max:hover,
+	#titlebar:-moz-window-inactive #titlebar-max:hover {
+		background-image: url("titlebuttons/backdrop-maximize.svg") !important;
+	}
+	#nav-bar:-moz-window-inactive .titlebar-restore:hover,
+	#titlebar:-moz-window-inactive .titlebar-restore:hover,
+	#titlebar:-moz-window-inactive #titlebar-restore:hover,
+	:root[sizemode="maximized"] #nav-bar:-moz-window-inactive .titlebar-max:hover,
+	:root[sizemode="maximized"] #titlebar:-moz-window-inactive .titlebar-max:hover,
+	:root[sizemode="maximized"] #titlebar:-moz-window-inactive #titlebar-max:hover {
+		background-image: url("titlebuttons/backdrop-restore.svg") !important;
+	}
+}
