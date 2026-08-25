@@ -2,9 +2,6 @@
 
 This project uses various extensions and stylesheets to enhance the Firefox aesthetic and functionality.
 
-> [!important]
-> Styling from [MacTahoe-gtk-theme](https://github.com/vinceliuice/MacTahoe-gtk-theme/tree/main/other/firefox) was added to this project. To opt in, simply uncomment `@import "MacTahoe/theme-adaptive.css"; /**/` in userChrome.css.
-
 ## Screenshots
 
 ![2026-05-20](./screenshots/2026-05-20.png)
@@ -36,7 +33,8 @@ For the Firefox theme, I recommend using [Adaptive Tab Bar Colour](https://addon
 
 _I recommend the other settings only for private backups and not sharing._
 
-_Note: The horizontal scrolling is somewhat broken, hence why it was limited to one panel per scroll. Also, the settings only apply after reopening the sidebar._
+> [!note]
+> The horizontal scrolling is somewhat broken, hence why it was limited to one panel per scroll. Also, the settings only apply after reopening the sidebar or opening a new window.
 
 ##### Adaptive Tab Bar Colour
 
@@ -44,7 +42,8 @@ Not much to configure, but you can go into the extension preferences (in about:a
 
 The Adaptive Tab Bar Colour extension cannot access this page; therefore, you need to set the theme manually.
 
-_Tip: Go to the menu > More tools > Eyedropper. Now you can select a color from your Home page wallpaper._
+> [!tip]
+> Go to the menu > More tools > Eyedropper. Now you can select a color from your Home page wallpaper.
 
 ##### Firefox Color
 
@@ -79,7 +78,8 @@ This project relies on custom CSS added to the Firefox browser.
 - Type `about:config` in the search bar.
 - Enter `toolkit.legacyUserProfileCustomizations.stylesheets` and make sure it is set to `true`.
 
-_Otherwise, custom CSS is ignored._
+> [!warning]
+> Otherwise, custom CSS is completely ignored.
 
 #### Install Custom CSS
 
@@ -100,10 +100,11 @@ _Otherwise, custom CSS is ignored._
 - SCSS files compile to CSS using VSCode extensions like Live Sass Compiler.
 - Use Prettier for code formatting
 - File Structure:
-    - chrome/ → Where Firefox locates the custom styles userChrome.css and userContent.css.
-    - styleEditor.css → Is the custom styling for the Sidebery sidebar.
-    - userChrome.css → Custom styling for the entire Firefox browser.
-    - userContent.css → Custom styling for the Firefox Home page.
+    - `chrome/` → Where Firefox locates the custom styles userChrome.css and userContent.(s)css.
+    - `styleEditor.(s)css` → Is the custom styling for the Sidebery sidebar.
+    - `userChrome.(s)css` → Custom styling for the entire Firefox browser.
+    - `userContent.(s)css` → Custom styling for the Firefox Home page.
+    - `_betterTiles.scss` (optional) → Further styling for the new tab page. It might break after an update, which is why it's opt-in.
 
 ### How to Enable the Browser Toolbox
 
@@ -117,4 +118,3 @@ _Otherwise, custom CSS is ignored._
 
 - [ ] Simplify styleEditor.css
 - [ ] Replace hardcoded values with variables
-- [ ] Fix sidebar menu being glitchy in top bar
