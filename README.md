@@ -19,25 +19,39 @@ The heart of this project is the [Sidebery](https://addons.mozilla.org/de/firefo
 
 For the Firefox theme, I recommend using [Adaptive Tab Bar Colour](https://addons.mozilla.org/de/firefox/addon/adaptive-tab-bar-colour/) **or** alternatively [Firefox Color](https://addons.mozilla.org/de/firefox/addon/firefox-color/). This is entirely optional and only alters the appearance.
 
-#### Configuration
+### Configuration
 
-##### Sidebery
+#### Sidebery
 
-**Import:** Go to the Sibery settings (right click on the extension > Open settings). Navigate to Help and then Import addon data. Select the newest configs/sidebery-data-\*.json file.
+##### Import
 
-**Export:** If you want to export your own config, go to the Sidebery settings > Help > Export addon data. I recommend you export these things:
+Go to the Sibery settings (right click on the extension > Open settings). Navigate to Help and then Import addon data. Select the newest `configs/sidebery-data-*.json` file.
+
+##### Export
+
+If you want to export your own config, go to the Sidebery settings > Help > Export addon data. Quick overview of the config:
+
+**Changed by this project**:
 
 - Settings
-- Containers config (if you use them)
 - Panels and navigation bar
 - Styles
 
-_I recommend the other settings only for private backups and not sharing._
+**Export this if you changed something**:
+
+- Context menu
+- Containers config
+- Keybindings
+
+**Only recommended for private backups, not sharing**:
+
+- Snapshots
+- Sites icons cache
 
 > [!note]
 > The horizontal scrolling is somewhat broken, hence why it was limited to one panel per scroll. Also, the settings only apply after reopening the sidebar or opening a new window.
 
-##### Adaptive Tab Bar Colour
+#### Adaptive Tab Bar Color
 
 Not much to configure, but you can go into the extension preferences (in about:addons) and under Advanced change the Home page color to whatever you like.
 
@@ -46,7 +60,7 @@ The Adaptive Tab Bar Colour extension cannot access this page; therefore, you ne
 > [!tip]
 > Go to the menu > More tools > Eyedropper. Now you can select a color from your Home page wallpaper.
 
-##### Firefox Color
+#### Firefox Color
 
 - [Purple theme](https://color.firefox.com/?theme=XQAAAAJ-AgAAAAAAAABBqYhm849SCicxcUEYWXcGHf3p79Ffm06OXtakGWB8WYVdiUdfldDIGArGklQf50jaX9NN8B5fVQPonJyoTUv1cfmNTZm7nJoHBdhc2DAVqFWZ7cq-3zJ9OCzGKhirAc0jBSiIotmeHfQ0kzpiiW7Imn2R8tRQLXS6Xjd-XF9engtfYf3OPbnaLFrukRj5cwa-xiU38e91p_c8rlFvwxqxXL4-gj4FDDvwPi-l011PpxOhpy-EgA0jVExD3O_jWn_uM-WeoKXLRA_wJhFNj_sxx7frwufx6EXMIxsTEeWFTy89Cl9sgCg1m7sqcIM__T4xZmsDv9qoO-0-MJYCzegjGwKVYB4zhg7EYVj-TXzXZV39iPa9)
 
