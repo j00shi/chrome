@@ -4,7 +4,10 @@
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-@media (-moz-gtk-csd-available), (-moz-platform: linux) {
+@media (-moz-gtk-csd-available),
+	(-moz-platform: linux),
+	(-moz-platform: windows),
+	(-moz-platform: windows-win10) {
 	// Hide native button icons
 	#nav-bar,
 	#titlebar {
