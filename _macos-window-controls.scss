@@ -1,10 +1,13 @@
-// macOS-style window control buttons for Linux/GTK
+// macOS-style window control buttons
 // Uses SVGs from titlebuttons/ directory
 // Comment out the @import in userChrome.scss to disable
 
 @namespace xul url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-@media (-moz-gtk-csd-available), (-moz-platform: linux) {
+@media (-moz-gtk-csd-available),
+	(-moz-platform: linux),
+	(-moz-platform: windows),
+	(-moz-platform: windows-win10) {
 	// Hide native button icons
 	#nav-bar,
 	#titlebar {
@@ -159,9 +162,15 @@
 	#nav-bar:-moz-window-inactive .titlebar-restore:hover,
 	#titlebar:-moz-window-inactive .titlebar-restore:hover,
 	#titlebar:-moz-window-inactive #titlebar-restore:hover,
-	:root[sizemode="maximized"] #nav-bar:-moz-window-inactive .titlebar-max:hover,
-	:root[sizemode="maximized"] #titlebar:-moz-window-inactive .titlebar-max:hover,
-	:root[sizemode="maximized"] #titlebar:-moz-window-inactive #titlebar-max:hover {
+	:root[sizemode="maximized"]
+		#nav-bar:-moz-window-inactive
+		.titlebar-max:hover,
+	:root[sizemode="maximized"]
+		#titlebar:-moz-window-inactive
+		.titlebar-max:hover,
+	:root[sizemode="maximized"]
+		#titlebar:-moz-window-inactive
+		#titlebar-max:hover {
 		background-image: url("titlebuttons/backdrop-restore.svg") !important;
 	}
 }
