@@ -21,10 +21,6 @@
 	border-radius: 18px !important;
 	transition: all ease-in-out 0.2s;
 
-	&:active {
-		scale: 0.95;
-	}
-
 	&:is(.active, :focus, :hover) {
 		background-color: hsla(0, 0%, 100%, 0.05) !important;
 		backdrop-filter: blur(7px);
@@ -43,6 +39,10 @@
 			width: auto !important;
 			height: auto !important;
 		}
+	}
+
+	&:active {
+		scale: 0.95;
 	}
 
 	.top-site-button * {
