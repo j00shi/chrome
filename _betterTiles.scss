@@ -5,6 +5,14 @@
 	text-shadow: 2px 2px 2px #222 !important;
 }
 
+.top-sites-list {
+	&:has(.top-site-outer:focus-within) .top-site-outer:not(:focus-within) {
+		pointer-events: none;
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
 .top-site-outer {
 	margin: 0.25rem !important;
 	aspect-ratio: 1;
@@ -37,10 +45,8 @@
 		}
 	}
 
-	.top-site-button {
-		&:focus {
-			outline: none !important;
-		}
+	.top-site-button * {
+		outline: none !important;
 	}
 
 	.tile {
