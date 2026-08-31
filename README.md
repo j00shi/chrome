@@ -17,7 +17,7 @@ This project uses various extensions and stylesheets to enhance the Firefox aest
 
 The heart of this project is the [Sidebery](https://addons.mozilla.org/de/firefox/addon/sidebery/) extension. It provides the vertical tabs.
 
-For the Firefox theme, I recommend using [Adaptive Tab Bar Colour](https://addons.mozilla.org/de/firefox/addon/adaptive-tab-bar-colour/) **or** alternatively [Firefox Color](https://addons.mozilla.org/de/firefox/addon/firefox-color/). This is entirely optional and only alters the appearance.
+For the Firefox theme, I recommend using [Adaptive Tab Bar Color](https://addons.mozilla.org/de/firefox/addon/adaptive-tab-bar-colour/) **or** alternatively [Firefox Color](https://addons.mozilla.org/de/firefox/addon/firefox-color/). This is entirely optional and only alters the appearance.
 
 ### Configuration
 
@@ -25,7 +25,7 @@ For the Firefox theme, I recommend using [Adaptive Tab Bar Colour](https://addon
 
 ##### Import
 
-Go to the Sibery settings (right click on the extension > Open settings). Navigate to Help and then Import addon data. Select the newest `configs/sidebery-data-*.json` file.
+Go to the Sibery settings (right-click on the extension > Open settings). Navigate to "Help" and then "Import addon data". Select the newest `configs/sidebery-data-*.json` file.
 
 ##### Export
 
@@ -55,7 +55,7 @@ If you want to export your own config, go to the Sidebery settings > Help > Expo
 
 Not much to configure, but you can go into the extension preferences (in about:addons) and under Advanced change the Home page color to whatever you like.
 
-The Adaptive Tab Bar Colour extension cannot access this page; therefore, you need to set the theme manually.
+The Adaptive Tab Bar Color extension cannot access this page; therefore, you need to set the theme manually.
 
 > [!tip]
 > Go to the menu > More tools > Eyedropper. Now you can select a color from your Home page wallpaper.
