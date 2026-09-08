@@ -108,10 +108,10 @@
 
 	// Hover area
 	&::before {
-		width: 10px;
+		width: 16px;
 		height: 100vh;
 		top: 0;
-		right: -10px;
+		right: -16px;
 		clip-path: none;
 		background-color: transparent;
 	}

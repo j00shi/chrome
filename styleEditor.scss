@@ -62,6 +62,10 @@
 	transition:
 		box-shadow 0.25s ease,
 		background 0.25s ease;
+
+	.t-box .title {
+		transform: none;
+	}
 }
 
 // Styling for the audio symbol that appears next to tabs and the panel playing audio
