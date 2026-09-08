@@ -87,11 +87,34 @@
 	}
 }
 
-// Adds a margin to the side except when in DOM Fullscreen
-:root:not([inDOMFullscreen="true"])
+// Adds a margin to the side except when in Fullscreen
+:root:not([inFullscreen="true"])
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
 	~ #tabbrowser-tabbox {
 	margin-left: var(--sidebar-width) !important;
+}
+
+// In fullscreen the top toolbar is fully hidden, leaving only the sidebar.
+:root[inFullscreen]
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+	width: var(--expanded-width) !important;
+	transform: translateX(-100%);
+	transition: transform var(--transition-time) ease-in-out !important;
+
+	// Reveal when the hover strip
+	&:is(:hover, :focus, :focus-within) {
+		transform: translateX(0);
+	}
+
+	// Hover area
+	&::before {
+		width: 10px;
+		height: 100vh;
+		top: 0;
+		right: -10px;
+		clip-path: none;
+		background-color: transparent;
+	}
 }
 
 /*	==========================
