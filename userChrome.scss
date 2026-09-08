@@ -86,7 +86,7 @@
 }
 
 // Adds a margin to the side except when in Fullscreen
-:root:not([inFullscreen="true"])
+:root:not([inFullscreen])
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
 		[hidden]
 	)
@@ -94,7 +94,7 @@
 	margin-left: var(--sidebar-width) !important;
 }
 
-// In fullscreen the top toolbar is fully hidden, leaving only the sidebar.
+// Fully hide the sidebar when in fullscreen
 :root[inFullscreen]
 	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 	width: var(--expanded-width) !important;
