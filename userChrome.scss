@@ -89,7 +89,9 @@
 
 // Adds a margin to the side except when in Fullscreen
 :root:not([inFullscreen="true"])
-	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]
+	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
+		[hidden]
+	)
 	~ #tabbrowser-tabbox {
 	margin-left: var(--sidebar-width) !important;
 }
