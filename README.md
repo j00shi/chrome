@@ -131,5 +131,7 @@ This project relies on custom CSS added to the Firefox browser.
 
 ## TODO
 
-- [ ] Simplify styleEditor.css
+- [ ] Fix pinned tabs size
+- [ ] Fix audio symbol outline for panel
+- [ ] Bottom bar not visible
 - [ ] Replace hardcoded values with variables

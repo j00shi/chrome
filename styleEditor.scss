@@ -1,5 +1,5 @@
+// Official Sidebery vars
 #root.root {
-	--audio-left: 22px;
 	--tabs-font: 10pt sans-serif;
 	--nav-btn-width: 42px;
 	--nav-btn-height: 42px;
@@ -12,95 +12,82 @@
 	--search-icon-width: 42px;
 }
 
+// Custom vars
+#root.root {
+	--audio-position: 22px;
+	--audio-size: 16px;
+}
+
+// Top nav bar
 .NavigationBar {
+	// Show panels
 	&[data-layout="inline"]
 		.main-items
 		.nav-item[data-index="-1"][data-active="true"] {
 		opacity: 1;
-		z-index: 100;
 		transform: scale(1, 1);
 	}
 
+	// Navigation items (mostly panels)
 	.nav-item {
 		width: 38px;
 		height: 38px;
-		border-radius: var(--tabs-border-radius);
 		margin: 0 1px;
+		border-radius: var(--tabs-border-radius);
 	}
 
+	// Remove but always show before that
 	.static-btns {
 		transition: opacity 0.5s linear;
 	}
 }
 
+// Multiple lines of pinned tabs are glichty and annoying, so this limits them to one line
 .PinnedTabsBar {
 	flex-wrap: nowrap !important;
 }
 
-.Tab {
-	.audio {
-		position: absolute;
-		top: 22px !important;
-		left: var(--audio-left) !important;
-		height: 16px !important;
-		width: 16px !important;
-		background: var(--badge-bg);
-		border-radius: 3px;
-		background-color: transparent !important;
-	}
-
-	.t-box {
-		--audio-btn-offset: 0;
-	}
-
-	&[data-active="true"] .body {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background: #0001;
-		box-shadow: inset 0 0 3px 1px #fff9;
-	}
+// Active tab styling
+.Tab[data-active="true"] .body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #0001;
+	box-shadow: inset 0 0 3px 1px #fff9;
 }
 
+// Styling for the audio symbol that appears next to tabs and the panel playing audio
+.audio {
+	top: var(--audio-position) !important;
+	left: var(--audio-position) !important;
+	height: var(--audio-size) !important;
+	width: var(--audio-size) !important;
+	background-color: transparent !important;
+}
+
+// When not hovered
 #root:not(:hover) {
+	// Hides the line that appears to the left of child tabs
 	&[data-tabs-tree-lvl-marks="true"]
 		.Tab[data-pin="false"]:not([data-lvl="0"])
 		.body:after {
 		display: none;
 	}
 
+	// Hides nav buttons on the right side
 	.NavigationBar[data-layout="inline"] .static-btns {
 		opacity: 0;
 		z-index: -1;
 		transform: scale(0, 0);
 	}
 
+	// Removes indent so all tabs are on the same level
 	.TabsPanel {
 		--tabs-indent: 0px;
 	}
-
-	.SearchBar {
-		&::before {
-			background: transparent;
-		}
-
-		.placeholder,
-		.input {
-			opacity: 0;
-		}
-
-		.clear-btn {
-			display: none;
-		}
-	}
-
-	.PanelPlaceholder {
-		writing-mode: vertical-rl;
-		text-orientation: mixed;
-	}
 }
 
+// Bottom bar with buttons like bookmarks, sync and history
 .BottomBar .tool-btn {
-	/* min-width: var(--tabs-pinned-width); */
-	min-width: 40px; /* TODO: Use a var instead */
+	min-width: 40px;
 }
