@@ -23,8 +23,6 @@
 	visibility: collapse !important;
 }
 
-// TODO: Not working when sidebar is on the right side
-
 // Sidebar base styling for Sidebery or similar extensions
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 	position: absolute; // Replace with relative to move tab content
@@ -43,6 +41,18 @@
 			top: 0;
 			opacity: 1;
 		}
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: 15px;
+		height: 15px;
+		top: 0;
+		right: -15px;
+		z-index: 100;
+		background-color: var(--lwt-accent-color);
+		clip-path: path("M 0,0 L 15,0 A 15 15 0 0 0 0,15 Z");
 	}
 
 	~ #sidebar-splitter {
@@ -72,18 +82,6 @@
 		#sidebar-close {
 			display: none !important;
 		}
-	}
-
-	&::before {
-		content: "";
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		top: 0;
-		right: -15px;
-		z-index: 100;
-		background-color: var(--lwt-accent-color);
-		clip-path: path("M 0,0 L 15,0 A 15 15 0 0 0 0,15 Z");
 	}
 }
 

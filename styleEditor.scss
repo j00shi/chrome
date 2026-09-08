@@ -44,6 +44,11 @@
 // Multiple lines of pinned tabs are glichty and annoying, so this limits them to one line
 .PinnedTabsBar {
 	flex-wrap: nowrap !important;
+
+	.Tab .body {
+		width: var(--tabs-height) !important;
+		height: var(--tabs-height) !important;
+	}
 }
 
 // Active tab styling
@@ -66,6 +71,7 @@
 	height: var(--audio-size) !important;
 	width: var(--audio-size) !important;
 	background-color: transparent !important;
+	box-shadow: none !important;
 }
 
 // When not hovered
@@ -91,6 +97,11 @@
 }
 
 // Bottom bar with buttons like bookmarks, sync and history
-.BottomBar .tool-btn {
-	min-width: var(--tabs-height);
+.BottomBar {
+	// The position absolute on the sidebar breaks the BottomBar. This is the fix
+	bottom: var(--nav-btn-height) !important;
+
+	.tool-btn {
+		min-width: var(--tabs-height);
+	}
 }

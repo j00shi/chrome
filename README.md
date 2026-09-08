@@ -120,6 +120,8 @@ This project relies on custom CSS added to the Firefox browser.
     - `userChrome.(s)css` → Custom styling for the entire Firefox browser.
     - `userContent.(s)css` → Custom styling for the Firefox Home page.
     - `_betterTiles.scss` (optional) → Further styling for the new tab page. It might break after an update, which is why it's opt-in.
+- Using the Browser Toolbox is highly recommended. Note: I've had trouble with selecting elements in the sidebar on macOS and Windows 11 but never on Linux.
+- If you don't want to restart Firefox after every code change, you can go into Browser Toolbox > Style Editor and then edit the files there. Changes will be applied automatically on change. Keep in mind that changing the file there will change the real file. Also you might want to click on the gear and disable "Show Original Sources". Otherwise you will only see the Sass version of the file.
 
 ### How to Enable the Browser Toolbox
 
@@ -131,6 +133,4 @@ This project relies on custom CSS added to the Firefox browser.
 
 ## TODO
 
-- [ ] Fix pinned tabs size
-- [ ] Fix audio symbol outline for panel
-- [ ] Bottom bar not visible
+- [ ] Does not work with sidebar on the right
