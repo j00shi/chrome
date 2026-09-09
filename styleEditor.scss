@@ -5,7 +5,8 @@
 	--nav-btn-width: 42px;
 	--nav-btn-height: 42px;
 	--tabs-border-radius: 8px;
-	--tabs-height: calc(var(--sidebar-width) - var(--tab-margin) * 2);
+	// Apparently using vars breaks this for some reason
+	--tabs-height: 36px; // calc(var(--sidebar-width) - var(--tab-margin) * 2)
 	--tabs-inner-gap: 10px;
 	--tabs-pinned-width: 42px;
 	--tabs-pinned-height: 42px;
