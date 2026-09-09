@@ -1,21 +1,25 @@
 // Official Sidebery vars
 #root.root {
 	--tabs-font: 10pt sans-serif;
+	--tabs-margin: 0px;
 	--nav-btn-width: 42px;
 	--nav-btn-height: 42px;
 	--tabs-border-radius: 8px;
-	--tabs-height: 40px;
+	--tabs-height: calc(var(--sidebar-width) - var(--tab-margin) * 2);
 	--tabs-inner-gap: 10px;
 	--tabs-pinned-width: 42px;
 	--tabs-pinned-height: 42px;
 	--search-height: 36px;
 	--search-icon-width: 42px;
+	--nav-btn-margin: 0px;
 }
 
 // Custom vars
 #root.root {
 	--audio-position: 22px;
 	--audio-size: 16px;
+	--tab-margin: 3px;
+	--sidebar-width: 42px;
 }
 
 // Top nav bar
@@ -28,11 +32,21 @@
 		transform: scale(1, 1);
 	}
 
-	// Navigation items (mostly panels)
+	// Navigation items (mostly panels). The reason why I set width and height here despite
+	// --nav-btn-width/height already being set, is because the box-shadow would otherwise
+	// be clipped off. Ugly fix but whatever
 	.nav-item {
 		width: var(--tabs-height);
 		height: var(--tabs-height);
 		border-radius: var(--tabs-border-radius);
+		margin: 0 var(--tab-margin);
+
+		&[data-active="true"] {
+			box-shadow:
+				1px 2px 5px var(--color),
+				inset 0 0 0 1px #ffffff26,
+				inset 0 1px 1px var(--color);
+		}
 	}
 
 	// Transition for when panels etc. appear
@@ -51,20 +65,32 @@
 	}
 }
 
-// Active tab styling
-.Tab[data-active="true"] .body {
-	background: linear-gradient(125deg, #ffffff26, #00000026);
-	box-shadow:
-		-2px -3px 6px #ffffff33,
-		2px 3px 7px #00000040,
-		inset 0 0 0 1px #ffffff26,
-		inset 0 1px 1px #ffffff33;
-	transition:
-		box-shadow 0.25s ease,
-		background 0.25s ease;
+// Tab styling
+.Tab {
+	.body {
+		margin: 0 var(--tab-margin);
+		width: unset;
+		transition:
+			box-shadow 0.25s ease,
+			background 0.25s ease;
 
-	.t-box .title {
-		transform: none;
+		.fav {
+			margin: 0 var(--tabs-inner-gap) !important;
+		}
+	}
+
+	// When active
+	&[data-active="true"] .body {
+		background: linear-gradient(125deg, #ffffff26, #00000026);
+		box-shadow:
+			-2px -3px 6px #ffffff33,
+			2px 3px 7px #00000040,
+			inset 0 0 0 1px #ffffff26,
+			inset 0 1px 1px #ffffff33;
+
+		.t-box .title {
+			transform: none;
+		}
 	}
 }
 
