@@ -16,7 +16,7 @@
 
 // Custom vars
 #root.root {
-	--audio-position: 22px;
+	--audio-position: 20px;
 	--audio-size: 16px;
 	--tab-margin: 3px;
 	--sidebar-width: 42px;
@@ -77,6 +77,10 @@
 		.fav {
 			margin: 0 var(--tabs-inner-gap) !important;
 		}
+
+		.t-box .title {
+			transform: none;
+		}
 	}
 
 	// When active
@@ -87,10 +91,6 @@
 			2px 3px 7px #00000040,
 			inset 0 0 0 1px #ffffff26,
 			inset 0 1px 1px #ffffff33;
-
-		.t-box .title {
-			transform: none;
-		}
 	}
 }
 
