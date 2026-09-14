@@ -130,5 +130,5 @@ This project relies on custom CSS added to the Firefox browser.
 
 ## TODO
 
-- Does not work when sidebar is on the right
+- Does not work when sidebar is on the right.
 - Animation for full screen top bar possible?
