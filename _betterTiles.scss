@@ -1,4 +1,9 @@
 .top-sites-list {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
 	&:has(.top-site-outer:focus-within) .top-site-outer:not(:focus-within) {
 		pointer-events: none;
 		opacity: 0;
