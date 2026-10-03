@@ -48,6 +48,9 @@
 
 	// Hover area
 	&::before {
+		content: "";
+		position: absolute;
+		display: block;
 		width: 16px !important;
 		height: 100vh !important;
 		top: 0 !important;
