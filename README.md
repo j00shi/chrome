@@ -5,6 +5,7 @@ This project uses various extensions and stylesheets to enhance the Firefox aest
 ## Screenshots
 
 ![2026-08-25](./screenshots/2026-09-10.png)
+![2026-10-03](./screenshots/2026-10-03.gif)
 
 ---
 
