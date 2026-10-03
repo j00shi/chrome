@@ -5,7 +5,15 @@
 }
 
 .logo-and-wordmark {
+	// Mozilla moved the logo and wordmark from content to sidebar-inline-start (top left box)
+	// I find this asymmetry ugly af so I moved it back. Ugly fix I know
+	position: fixed !important;
+	top: 15rem !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+
 	.logo {
+		// These changes are totally necessary
 		border-radius: 43%;
 		filter: drop-shadow(-0.08rem 0.3rem 0.2rem #df0d65c0)
 			drop-shadow(0.2rem -0.3rem 0.2rem #ffde41c0);
@@ -14,24 +22,27 @@
 		&:hover {
 			filter: drop-shadow(-0.08rem 0.3rem 0.5rem #625ad9c0)
 				drop-shadow(0.2rem -0.3rem 0.5rem #bb3ae6c0);
-			animation: barrelRoll infinite linear 0.5s;
+			animation: roll infinite linear 0.5s;
 		}
 
 		&:active {
-			position: relative;
+			// Logo go brrr
+			position: relative !important;
 			left: 0;
 			animation:
-				barrelRoll infinite linear 0.5s,
+				roll infinite linear 0.5s,
 				sonic linear 1s forwards;
 		}
 	}
 
+	// Prevent wordmark from disappearing for no reason. Why Mozilla?
 	.wordmark {
+		display: inline-block !important;
 		filter: drop-shadow(0.2rem 0.2rem 0.1rem #0004);
 	}
 }
 
-@keyframes barrelRoll {
+@keyframes roll {
 	to {
 		rotate: 1turn;
 	}
