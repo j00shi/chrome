@@ -4,9 +4,8 @@
 	--transition-time: 0.2s;
 }
 
-// macOS-style window control buttons for Linux
-// Comment out this import to use default Linux window controls
-@import "macos-window-controls";
+// Uncomment this to import macOS-style window controls for Linux
+// @import "macos-window-controls";
 
 // Hide the main tabs toolbar (removes native Firefox tabs UI)
 #TabsToolbar {
