@@ -58,18 +58,12 @@
 	}
 }
 
-// This is a silly little fix since #sidebar is a browser element and children can't access
-// external variables. So the background-color is passed down to #sidebar-panel-header
-// via #webextpanels-window.
+// Potential fix
 #sidebar {
-	background-color: var(--lwt-accent-color) !important;
+	background: var(--lwt-accent-color) !important;
 
 	#webextpanels-window {
-		background-color: inherit !important;
-
-		#sidebar-panel-header {
-			background-color: inherit !important;
-		}
+		background: transparent !important;
 	}
 }
 
