@@ -17,6 +17,9 @@ The heart of this project is the [Sidebery](https://addons.mozilla.org/de/firefo
 
 For the Firefox theme, I recommend using [Adaptive Tab Bar Color](https://addons.mozilla.org/de/firefox/addon/adaptive-tab-bar-colour/) **or** alternatively [Firefox Color](https://addons.mozilla.org/de/firefox/addon/firefox-color/). This is entirely optional and only alters the appearance.
 
+> [!important]
+> You must enable vertical tabs in the settings for everything to work properly!
+
 ### Configuration
 
 #### Sidebery

@@ -7,11 +7,6 @@
 // Uncomment this to import macOS-style window controls for Linux
 // @import "macos-window-controls";
 
-// Hide the main tabs toolbar (removes native Firefox tabs UI)
-#TabsToolbar {
-	visibility: collapse !important;
-}
-
 #sidebar-container {
 	width: var(--sidebar-width) !important;
 }
@@ -95,76 +90,3 @@
 	border-inline-start: unset !important;
 	border-block-start: unset !important;
 }
-
-/*	==========================
-	MacOS specific styles
-	=========================== */
-@media (-moz-platform: macos) {
-	#nav-bar {
-		transition: padding ease-in-out 0.5s !important;
-
-		#main-window:not([inFullscreen]) & {
-			padding-left: 80px !important;
-		}
-	}
-
-	#TabsToolbar .titlebar-buttonbox-container {
-		position: absolute !important;
-		display: block !important;
-		visibility: visible !important;
-		top: 12px !important;
-		left: 0px !important;
-	}
-}
-
-/*	==========================
-	Linux/GTK specific styles
-	=========================== */
-@media (-moz-gtk-csd-available), (-moz-platform: linux) {
-	#navigator-toolbox {
-		overflow: hidden !important;
-	}
-
-	// Hide menu bar and tabs toolbar button boxes
-	#toolbar-menubar,
-	#TabsToolbar {
-		& > .titlebar-buttonbox-container {
-			display: none !important;
-		}
-	}
-
-	// Let buttons push other nav-bar content via flex flow
-	#nav-bar > .titlebar-buttonbox-container {
-		display: flex !important;
-		-moz-appearance: none !important;
-		flex-shrink: 0 !important;
-		align-items: center !important;
-		position: relative !important;
-	}
-
-	// Right side: buttons go to the end
-	@media not (-moz-gtk-csd-reversed-placement) {
-		#nav-bar > .titlebar-buttonbox-container {
-			order: 1 !important;
-		}
-	}
-
-	// Left side: buttons go to the start
-	@media (-moz-gtk-csd-reversed-placement) {
-		#nav-bar > .titlebar-buttonbox-container {
-			order: -1 !important;
-		}
-	}
-}
-
-/* ===========================
-   Windows specific styles
-   =========================== */
-@media (-moz-platform: windows), (-moz-platform: windows-win10) {
-	// Show window controls in nav-bar (Windows)
-	#nav-bar .titlebar-buttonbox-container {
-		display: flex !important;
-	}
-}
-
-/*# sourceMappingURL=userChrome.css.map */
