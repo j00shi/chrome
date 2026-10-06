@@ -13,6 +13,10 @@
 	visibility: collapse !important;
 }
 
+#sidebar-container {
+	width: var(--sidebar-width) !important;
+}
+
 // Sidebar base styling for Sidebery or similar extensions
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 	position: absolute !important; // Replace with relative to move tab content
@@ -58,15 +62,6 @@
 		clip-path: none !important;
 		background-color: transparent !important;
 	}
-}
-
-// Adds a margin to the side except when in Fullscreen
-:root:not([inFullscreen])
-	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:not(
-		[hidden]
-	)
-	~ #tabbrowser-tabbox {
-	margin-left: var(--sidebar-width) !important;
 }
 
 // This is a silly little fix since #sidebar is a browser element and children can't access
@@ -167,27 +162,9 @@
    Windows specific styles
    =========================== */
 @media (-moz-platform: windows), (-moz-platform: windows-win10) {
-	// Set toolbar height variable for Windows
-	:root:not([uidensity="compact"]) {
-		--uc-toolbar-height: 38px;
-	}
-
 	// Show window controls in nav-bar (Windows)
 	#nav-bar .titlebar-buttonbox-container {
 		display: flex !important;
-	}
-
-	// Remove negative margin from nav-bar so it sits flush at the top
-	:root:not([inFullscreen]) #nav-bar {
-		margin-top: calc(0px - var(--uc-toolbar-height));
-		z-index: 2;
-	}
-
-	// Menubar sizing and positioning
-	#toolbar-menubar {
-		min-height: unset !important;
-		height: var(--uc-toolbar-height) !important;
-		position: relative;
 	}
 }
 
