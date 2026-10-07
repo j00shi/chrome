@@ -1,5 +1,5 @@
 :root {
-	--sidebar-width: 42px;
+	--sidebar-width: 44px;
 	--expanded-width: 250px;
 	--transition-time: 0.2s;
 }
@@ -58,25 +58,10 @@
 	}
 }
 
-// Potential fix
-#sidebar {
-	background: var(--lwt-accent-color) !important;
-
-	#webextpanels-window {
-		background: transparent !important;
-	}
-}
-
-// For switching between tabs, sync tabs etc.
+// Hide panel header. Fixing the design was too annoyning and Mozilla will probably change this
+// soon anyway.
 #sidebar-panel-header {
-	height: 0px !important;
-	padding: 0.5rem !important;
-	margin: 0 !important;
-	transition: height var(--transition-time) ease-in-out !important;
-
-	&:hover {
-		height: 32px !important;
-	}
+	display: none !important;
 }
 
 // Removes the extra borders around websites. border-start-start-radius is the round edge btw.

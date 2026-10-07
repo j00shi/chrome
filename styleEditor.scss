@@ -2,16 +2,16 @@
 #root.root {
 	--tabs-font: 10pt sans-serif;
 	--tabs-margin: 0px;
-	--nav-btn-width: 42px;
-	--nav-btn-height: 42px;
+	--nav-btn-width: 44px;
+	--nav-btn-height: 44px;
 	--tabs-border-radius: 8px;
 	// Apparently using vars breaks this for some reason
 	--tabs-height: 36px; // calc(var(--sidebar-width) - var(--tab-margin) * 2)
 	--tabs-inner-gap: 10px;
-	--tabs-pinned-width: 42px;
-	--tabs-pinned-height: 42px;
+	--tabs-pinned-width: 44px;
+	--tabs-pinned-height: 44px;
 	--search-height: 36px;
-	--search-icon-width: 42px;
+	--search-icon-width: 44px;
 	--nav-btn-margin: 0px;
 }
 
@@ -20,11 +20,13 @@
 	--audio-position: 20px;
 	--audio-size: 16px;
 	--tab-margin: 3px;
-	--sidebar-width: 42px;
+	--sidebar-width: 44px;
 }
 
 // Top nav bar
 .NavigationBar {
+	padding-top: var(--tab-margin) !important;
+
 	// Show panels
 	&[data-layout="inline"]
 		.main-items
