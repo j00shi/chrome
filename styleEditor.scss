@@ -1,31 +1,30 @@
+// Custom vars
+$audio-position: 20px;
+$audio-size: 16px;
+$sidebar-border-width: 1px;
+$sidebar-only-width: 42px;
+$sidebar-width: $sidebar-only-width + $sidebar-border-width * 2; // * 2 since the border is on both sides
+$tab-margin: 3px;
+
 // Official Sidebery vars
 #root.root {
-	--tabs-font: 10pt sans-serif;
-	--tabs-margin: 0px;
-	--nav-btn-width: 44px;
-	--nav-btn-height: 44px;
-	--tabs-border-radius: 8px;
-	// Apparently using vars breaks this for some reason
-	--tabs-height: 36px; // calc(var(--sidebar-width) - var(--tab-margin) * 2)
-	--tabs-inner-gap: 10px;
-	--tabs-pinned-width: 44px;
-	--tabs-pinned-height: 44px;
-	--search-height: 36px;
-	--search-icon-width: 44px;
+	--nav-btn-height: #{$sidebar-width};
 	--nav-btn-margin: 0px;
-}
-
-// Custom vars
-#root.root {
-	--audio-position: 20px;
-	--audio-size: 16px;
-	--tab-margin: 3px;
-	--sidebar-width: 44px;
+	--nav-btn-width: #{$sidebar-width};
+	--search-height: #{$sidebar-only-width - $tab-margin * 2};
+	--search-icon-width: #{$sidebar-only-width};
+	--tabs-border-radius: 20px;
+	--tabs-font: 10pt sans-serif;
+	--tabs-height: #{$sidebar-only-width - $tab-margin * 2}; // * 2 since margin is on both sides
+	--tabs-inner-gap: #{$sidebar-width / 2 - $tab-margin - 9px}; // Tab icon center. 9px is needed for offset, don't ask me why, it just works
+	--tabs-margin: 0px;
+	--tabs-pinned-height: #{$sidebar-width};
+	--tabs-pinned-width: #{$sidebar-width};
 }
 
 // Top nav bar
 .NavigationBar {
-	padding-top: var(--tab-margin) !important;
+	padding-top: #{$tab-margin} !important;
 
 	// Show panels
 	&[data-layout="inline"]
@@ -42,7 +41,7 @@
 		width: var(--tabs-height);
 		height: var(--tabs-height);
 		border-radius: var(--tabs-border-radius);
-		margin: 0 var(--tab-margin);
+		margin: 0 #{$tab-margin};
 
 		&[data-active="true"] {
 			box-shadow:
@@ -71,7 +70,7 @@
 // Tab styling
 .Tab {
 	.body {
-		margin: 0 var(--tab-margin);
+		margin: 0 #{$tab-margin};
 		width: unset;
 		transition:
 			box-shadow 0.25s ease,
@@ -99,10 +98,10 @@
 
 // Styling for the audio symbol that appears next to tabs and the panel playing audio
 .audio {
-	top: var(--audio-position) !important;
-	left: var(--audio-position) !important;
-	height: var(--audio-size) !important;
-	width: var(--audio-size) !important;
+	top: #{$audio-position} !important;
+	left: #{$audio-position} !important;
+	height: #{$audio-size} !important;
+	width: #{$audio-size} !important;
 	background-color: transparent !important;
 	box-shadow: none !important;
 }
