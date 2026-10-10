@@ -1,22 +1,17 @@
-// Custom vars
-$audio-position: 20px;
-$audio-size: 16px;
-$sidebar-border-width: 1px;
-$sidebar-only-width: 42px;
-$sidebar-width: $sidebar-only-width + $sidebar-border-width * 2; // * 2 since the border is on both sides
-$tab-margin: 3px;
+@use "config" as *;
 
 // Official Sidebery vars
 #root.root {
 	--nav-btn-height: #{$sidebar-width};
 	--nav-btn-margin: 0px;
 	--nav-btn-width: #{$sidebar-width};
-	--search-height: #{$sidebar-only-width - $tab-margin * 2};
+	--search-height: #{$sidebar-only-width - $tab-margin * 2}; // Same height as tabs
 	--search-icon-width: #{$sidebar-only-width};
-	--tabs-border-radius: 20px;
+	--tabs-border-radius: #{$border-radius};
 	--tabs-font: 10pt sans-serif;
 	--tabs-height: #{$sidebar-only-width - $tab-margin * 2}; // * 2 since margin is on both sides
-	--tabs-inner-gap: #{$sidebar-width / 2 - $tab-margin - 9px}; // Tab icon center. 9px is needed for offset, don't ask me why, it just works
+	--tabs-inner-gap: #{$sidebar-width * 0.5 - $tab-margin - 9px}; // Tab icon center. 9px is needed
+	// for offset, don't ask me why, it just works
 	--tabs-margin: 0px;
 	--tabs-pinned-height: #{$sidebar-width};
 	--tabs-pinned-width: #{$sidebar-width};

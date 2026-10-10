@@ -26,7 +26,7 @@ For the Firefox theme, I recommend using [Adaptive Tab Bar Color](https://addons
 
 ##### Import
 
-Go to the Sibery settings (right-click on the extension > Open settings). Navigate to "Help" and then "Import addon data". Select the newest `configs/sidebery-data-*.json` file.
+Go to the Sibery settings (right-click on the extension > Open settings). Navigate to "Help" and then "Import addon data". Select the `sidebery-data-*.json` file.
 
 ##### Export
 
@@ -113,16 +113,23 @@ This project relies on custom CSS added to the Firefox browser.
 
 ## Explanation & Tips
 
-- SCSS files compile to CSS using VSCode extensions like Live Sass Compiler.
-- Use Prettier for code formatting
+- Customizing: All global variables (sidebar width, sizing, etc.) and optional modules live in `_global.scss`. **Don't edit that file!** Instead:
+    1. Copy the template once: `cp _config.example.scss _config.scss`.
+    2. Edit `_config.scss` to override any variable or feature flag.
 - File Structure:
     - `chrome/` → Where Firefox locates the custom styles userChrome.css and userContent.(s)css.
+    - `_global.scss` → Central list of all shared variables and feature flags (the defaults).
+    - `_config.scss` → Your personal overrides (git-ignored).
     - `styleEditor.(s)css` → Is the custom styling for the Sidebery sidebar.
     - `userChrome.(s)css` → Custom styling for the entire Firefox browser.
     - `userContent.(s)css` → Custom styling for the Firefox Home page.
     - `_betterTiles.scss` (optional) → Further styling for the new tab page. It might break after an update, which is why it's opt-in.
+    - `_macoControls.scss` (optional) → Mac-style window controls for Linux.
+    - `_fullHide.scss` (optional) → Completely hide the sidebar in fullscreen.
 - Using the Browser Toolbox is highly recommended. Note: I've had trouble with selecting elements in the sidebar on macOS and Windows 11 but never on Linux.
 - If you don't want to restart Firefox after every code change, you can go into Browser Toolbox > Style Editor and then edit the files there. Changes will be applied automatically on change. Keep in mind that changing the file there will change the real file. Also you might want to click on the gear and disable "Show Original Sources". Otherwise you will only see the Sass version of the file.
+- Use Prettier for code formatting
+- SCSS files compile to CSS using VSCode extensions like Live Sass Compiler.
 
 ### How to Enable the Browser Toolbox
 

@@ -1,4 +1,9 @@
-@use "betterTiles";
+@use "config" as *;
+@use "betterTiles" as tiles;
+
+@if $enable-better-tiles {
+	@include tiles.styles;
+}
 
 #root {
 	overflow: hidden;

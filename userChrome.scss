@@ -1,60 +1,39 @@
-:root {
-	--sidebar-width: 44px;
-	--expanded-width: 250px;
-	--transition-time: 0.2s;
+@use "config" as *;
+@use "macControls" as mac;
+@use "fullHide" as full;
+
+@if $enable-mac-controls {
+	@include mac.styles;
 }
 
-// Uncomment this to import macOS-style window controls for Linux
-// @import "macos-window-controls";
+@if $enable-full-hide {
+	@include full.styles;
+}
 
 #sidebar-container {
-	width: var(--sidebar-width) !important;
+	width: #{$sidebar-width} !important;
 }
 
 // Sidebar base styling for Sidebery or similar extensions
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
 	position: absolute !important; // Replace with relative to move tab content
-	width: var(--sidebar-width) !important;
+	width: #{$sidebar-width} !important;
 	height: 100vh !important;
 	min-width: unset !important;
 	max-width: unset !important;
 	padding: unset !important;
-	transition: width var(--transition-time) ease-in-out !important;
+	transition: width #{$transition-time} ease-in-out !important;
 	will-change: width !important;
 	z-index: 1000 !important;
+	--sidebar-box-start-start-radius: #{$border-radius} !important;
+	--sidebar-box-start-end-radius: #{$border-radius} !important;
 
 	&:is(:hover, :focus) {
-		width: var(--expanded-width) !important;
+		width: #{$sidebar-expanded-width} !important;
 	}
 
 	~ #sidebar-splitter {
 		display: none !important;
-	}
-}
-
-// Fully hide the sidebar when in fullscreen
-:root[inFullscreen]
-	#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
-	width: var(--expanded-width) !important;
-	transform: translateX(-100%) !important;
-	transition: transform var(--transition-time) ease-in-out !important;
-
-	// Reveal when the hover strip
-	&:is(:hover, :focus, :focus-within) {
-		transform: translateX(0) !important;
-	}
-
-	// Hover area
-	&::before {
-		content: "";
-		position: absolute;
-		display: block;
-		width: 16px !important;
-		height: 100vh !important;
-		top: 0 !important;
-		right: -16px !important;
-		clip-path: none !important;
-		background-color: transparent !important;
 	}
 }
 

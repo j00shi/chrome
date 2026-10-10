@@ -1,0 +1,21 @@
+// =================================================================================================
+// Global variables and features. These the default values; personal preferences belong in
+// _config.scss.
+// =================================================================================================
+
+// --- Variables -----------------------------------------------------------------------------------
+$sidebar-only-width: 42px !default; // Collapsed sidebar, excluding borders
+$sidebar-border-width: 1px !default;
+$sidebar-width: $sidebar-only-width + $sidebar-border-width * 2 !default; // Full collapsed width
+// including border on both sides
+$sidebar-expanded-width: 250px !default; // Width when hovered / focused
+$tab-margin: 3px !default;
+$transition-time: 0.2s !default;
+$audio-position: 20px !default;
+$audio-size: 16px !default;
+$border-radius: 15px !default;
+
+// --- Feature flags -------------------------------------------------------------------------------
+$enable-mac-controls: false !default; // mac-style window controls (Linux only)
+$enable-better-tiles: true !default; // Restyled new-tab top sites (may break on FF updates)
+$enable-full-hide: true !default; // Completely hide the sidebar in fullscreen

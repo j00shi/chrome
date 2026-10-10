@@ -1,0 +1,29 @@
+// Completely hide the sidebar in fullscreen.
+@use "config" as *;
+
+@mixin styles {
+	:root[inFullscreen]
+		#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+		width: #{$sidebar-expanded-width} !important;
+		transform: translateX(-100%) !important;
+		transition: transform #{$transition-time} ease-in-out !important;
+
+		// Reveal when the hover strip
+		&:is(:hover, :focus, :focus-within) {
+			transform: translateX(0) !important;
+		}
+
+		// Hover area
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			width: 16px !important;
+			height: 100vh !important;
+			top: 0 !important;
+			right: -16px !important;
+			clip-path: none !important;
+			background-color: transparent !important;
+		}
+	}
+}

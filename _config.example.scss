@@ -1,0 +1,11 @@
+// =================================================================================================
+// Personal config file. These are local overrides of _global.scss. You must first copy this file
+// and rename it to _config.scss (`cp _config.example.scss _config.scss`).
+// =================================================================================================
+
+@forward "global";
+// Example — comment the line above and use this to customise:
+// @forward "global" with (
+//     $sidebar-only-width: 60px,
+//     $enable-mac-controls: true
+// );

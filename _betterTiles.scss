@@ -1,99 +1,102 @@
-.top-sites-list {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+// Further styling for the new tab page's top sites.
+@mixin styles {
+	.top-sites-list {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 
-	&:has(.top-site-outer:focus-within) .top-site-outer:not(:focus-within) {
-		pointer-events: none;
-		opacity: 0;
-		visibility: hidden;
+		&:has(.top-site-outer:focus-within) .top-site-outer:not(:focus-within) {
+			pointer-events: none;
+			opacity: 0;
+			visibility: hidden;
+		}
 	}
-}
 
-.top-site-outer {
-	margin: 0.25rem !important;
-	aspect-ratio: 1;
-	width: 100px !important;
-	height: 100px !important;
-	border-radius: 18px !important;
-	transition: all ease-in-out 0.2s;
+	.top-site-outer {
+		margin: 0.25rem !important;
+		aspect-ratio: 1;
+		width: 100px !important;
+		height: 100px !important;
+		border-radius: 18px !important;
+		transition: all ease-in-out 0.2s;
 
-	&:is(.active, :focus, :hover) {
-		background-color: hsla(0, 0%, 100%, 0.05) !important;
-		backdrop-filter: blur(7px);
-		box-shadow:
-			0 2px 6px hsla(0, 0%, 0%, 0.17),
-			inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
-			inset 0 0 1px hsla(0, 0%, 100%, 0.1);
-		scale: 1.05;
+		&:is(.active, :focus, :hover) {
+			background-color: hsla(0, 0%, 100%, 0.05) !important;
+			backdrop-filter: blur(7px);
+			box-shadow:
+				0 2px 6px hsla(0, 0%, 0%, 0.17),
+				inset 1px 1px 2px hsla(0, 0%, 100%, 0.15),
+				inset 0 0 1px hsla(0, 0%, 100%, 0.1);
+			scale: 1.05;
 
-		.icon-wrapper {
-			transform: scale(1.25);
-			margin-bottom: 0.5rem;
+			.icon-wrapper {
+				transform: scale(1.25);
+				margin-bottom: 0.5rem;
+			}
+
+			.tile {
+				width: auto !important;
+				height: auto !important;
+			}
+		}
+
+		&:active {
+			scale: 0.95;
+		}
+
+		.top-site-button * {
+			outline: none !important;
 		}
 
 		.tile {
-			width: auto !important;
-			height: auto !important;
-		}
-	}
+			background: none !important;
+			box-shadow: none !important;
 
-	&:active {
-		scale: 0.95;
-	}
+			.icon-wrapper {
+				width: 48px !important;
+				height: 48px !important;
+				transition: transform 0.2s ease-in-out;
+			}
 
-	.top-site-button * {
-		outline: none !important;
-	}
-
-	.tile {
-		background: none !important;
-		box-shadow: none !important;
-
-		.icon-wrapper {
-			width: 48px !important;
-			height: 48px !important;
-			transition: transform 0.2s ease-in-out;
+			.top-site-icon {
+				width: 100% !important;
+				height: 100% !important;
+				background-size: contain !important;
+				// filter: sepia(100%) saturate(500%) hue-rotate(260deg)
+				// brightness(0.8) contrast(1.2) !important;
+			}
 		}
 
-		.top-site-icon {
-			width: 100% !important;
-			height: 100% !important;
-			background-size: contain !important;
-			// filter: sepia(100%) saturate(500%) hue-rotate(260deg)
-			// brightness(0.8) contrast(1.2) !important;
-		}
-	}
-
-	.icon.icon-pin-small {
-		display: none !important;
-	}
-
-	.title {
-		span {
-			font-size: 0.95rem;
-			user-select: none;
+		.icon.icon-pin-small {
+			display: none !important;
 		}
 
-		&:not(.pinned) span {
-			font-style: italic;
+		.title {
+			span {
+				font-size: 0.95rem;
+				user-select: none;
+			}
+
+			&:not(.pinned) span {
+				font-style: italic;
+			}
+
+			.title-label {
+				font-size: 0.75rem !important;
+				display: block !important;
+				overflow: hidden !important;
+				text-overflow: ellipsis !important;
+				-webkit-line-clamp: 1 !important;
+				line-clamp: 1 !important;
+				white-space: wrap !important;
+				word-break: break-word !important;
+				min-height: 1lh !important;
+			}
 		}
 
-		.title-label {
-			font-size: 0.75rem !important;
-			display: block !important;
-			overflow: hidden !important;
-			text-overflow: ellipsis !important;
-			-webkit-line-clamp: 1 !important;
-			line-clamp: 1 !important;
-			white-space: wrap !important;
-			word-break: break-word !important;
-			min-height: 1lh !important;
+		.context-menu-button {
+			margin: 2px;
 		}
-	}
-
-	.context-menu-button {
-		margin: 2px;
 	}
 }
