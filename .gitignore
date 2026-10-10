@@ -26,4 +26,4 @@ Desktop.ini
 *.css.map
 
 # Personal local overrides
-_config.scss
+# _config.scss

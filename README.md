@@ -113,9 +113,7 @@ This project relies on custom CSS added to the Firefox browser.
 
 ## Explanation & Tips
 
-- Customizing: All global variables (sidebar width, sizing, etc.) and optional modules live in `_global.scss`. **Don't edit that file!** Instead:
-    1. Copy the template once: `cp _config.example.scss _config.scss`.
-    2. Edit `_config.scss` to override any variable or feature flag.
+- Customizing: All global variables and modules live in `_global.scss`. **Don't edit that file!** Instead, edit `_config.scss` to override any variable or feature flag.
 - File Structure:
     - `chrome/` → Where Firefox locates the custom styles userChrome.css and userContent.(s)css.
     - `_global.scss` → Central list of all shared variables and feature flags (the defaults).
