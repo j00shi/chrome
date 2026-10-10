@@ -9,6 +9,10 @@
 	overflow: hidden;
 }
 
+.button-background {
+	background-color: transparent !important;
+}
+
 .logo-and-wordmark {
 	// Mozilla moved the logo and wordmark from content to sidebar-inline-start (top left box)
 	// I find this asymmetry ugly af so I moved it back. Ugly fix I know

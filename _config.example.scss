@@ -1,6 +1,7 @@
 // =================================================================================================
 // Personal config file. These are local overrides of _global.scss. You must first copy this file
-// and rename it to _config.scss (`cp _config.example.scss _config.scss`).
+// and rename it to _config.scss (`cp _config.example.scss _config.scss`). Make sure to compile the
+// SCSS, effects will not be applied otherwise.
 // =================================================================================================
 
 @forward "global";
@@ -9,3 +10,6 @@
 //     $sidebar-only-width: 60px,
 //     $enable-mac-controls: true
 // );
+
+// Tip: The top bar width in Firfox are 34px (compact), 38px (standard) and 42px (touch), in case
+// you want the sidebar to be the exact same width.
