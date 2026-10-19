@@ -27,3 +27,5 @@ Desktop.ini
 
 # Personal local overrides
 _config.scss
+# Downloaded Dart Sass binary (fetched by compile.sh / compile.ps1)
+.sass/
