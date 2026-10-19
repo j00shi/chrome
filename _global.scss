@@ -18,4 +18,4 @@ $border-radius: 15px !default;
 // --- Feature flags -------------------------------------------------------------------------------
 $enable-mac-controls: false !default; // mac-style window controls (Linux only)
 $enable-better-tiles: true !default; // Restyled new-tab top sites (may break on FF updates)
-$enable-full-hide: true !default; // Completely hide the sidebar in fullscreen
+$enable-full-hide: false !default; // Completely hide the sidebar in fullscreen
