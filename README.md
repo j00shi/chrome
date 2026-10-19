@@ -142,4 +142,5 @@ This project relies on custom CSS added to the Firefox browser.
 ## TODO
 
 - Does not work when sidebar is on the right.
-- Animation for full screen top bar possible?
+- Animation for full screen top bar possible (on Windows and Linux)?
+- Add a SASS compile script (see script branch)
