@@ -141,6 +141,7 @@ This project relies on custom CSS added to the Firefox browser.
 
 ## TODO
 
+- Bugged when fullHide is disabled: Firefox now hides sidebar when in fullscreen. Causes website to go below sidebar
 - Does not work when sidebar is on the right.
 - Animation for full screen top bar possible (on Windows and Linux)?
 - Add a SASS compile script (see script branch)
