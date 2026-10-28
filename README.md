@@ -88,6 +88,7 @@ linear-gradient(180deg, rgba(28,87,145,1) 0%, rgba(75,123,171,1) 40%, rgba(233,2
 ### Custom Styling
 
 This project relies on custom CSS added to the Firefox browser.
+If you want to use Sine to manage the styles, continue to the [Sine Install](#install-custom-css-with-sine) section.
 
 #### Verify Settings
 
@@ -109,6 +110,16 @@ This project relies on custom CSS added to the Firefox browser.
 - Run this command: `git clone https://codeberg.org/Joshi/chrome.git`.
 - Now you should see a new directory called `chrome`. You might need to restart Firefox now for the changes to apply.
 
+#### Install Custom CSS with Sine
+
+1. Install [Sine](https://github.com/CosmoCreeper/Sine/releases)
+2. Open **Settings → Sine Mods**.
+3. Find "**or, add your own locally from a GitHub repo.**" and paste:
+    ```
+    j00shi/chrome
+    ```
+4. click **Install**
+
 ---
 
 ## Explanation & Tips
@@ -120,6 +131,7 @@ This project relies on custom CSS added to the Firefox browser.
     - `chrome/` → Where Firefox locates the custom styles userChrome.css and userContent.(s)css.
     - `_global.scss` → Central list of all shared variables and feature flags (the defaults).
     - `_config.scss` → Your personal overrides (git-ignored).
+    - `theme.json` → Metadata used by [Sine](https://github.com/CosmoCreeper/Sine) to install the theme.
     - `styleEditor.(s)css` → Is the custom styling for the Sidebery sidebar.
     - `userChrome.(s)css` → Custom styling for the entire Firefox browser.
     - `userContent.(s)css` → Custom styling for the Firefox Home page.

@@ -1,0 +1,23 @@
+{
+  "id": "better-vertical-tabs",
+  "name": "Better Vertical Tabs",
+  "description": "Vertical Sidebery tabs with a collapsible Firefox sidebar.",
+  "author": "Joshi",
+  "version": "1.0.0",
+  "homepage": "https://github.com/j00shi/chrome",
+  "style": {
+    "chrome": "userChrome.css",
+    "content": "userContent.css"
+  },
+  "readme": "https://raw.githubusercontent.com/j00shi/chrome/main/README.md",
+  "tags": [
+    "firefox",
+    "sidebar",
+    "vertical tabs",
+    "sidebery",
+    "userchrome"
+  ],
+  "fork": [
+    "firefox"
+  ]
+}
