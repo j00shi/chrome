@@ -157,3 +157,4 @@ If you want to use Sine to manage the styles, continue to the [Sine Install](#in
 - Does not work when sidebar is on the right.
 - Animation for full screen top bar possible (on Windows and Linux)?
 - Add a SASS compile script (see script branch)
+- Can see text behind a very rounded sidebar
