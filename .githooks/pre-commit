@@ -1,0 +1,63 @@
+#!/bin/sh
+# Bump the patch version in theme.json before committing.
+#
+# Enable once per clone:
+#   git config core.hooksPath .githooks
+#
+# Skip a bump for a single commit with:
+#   git commit --no-verify
+
+set -eu
+
+theme=theme.json
+git_dir=$(git rev-parse --git-dir)
+
+[ -f "$theme" ] || exit 0
+
+# Mechanics like merges, rebases and cherry-picks replay commits that already
+# carry their own version bump. Don't bump them again.
+if [ -f "$git_dir/MERGE_HEAD" ] ||
+   [ -d "$git_dir/rebase-merge" ] ||
+   [ -d "$git_dir/rebase-apply" ]; then
+  exit 0
+fi
+
+# Nothing staged except theme.json itself: don't bump twice.
+if ! git diff --cached --name-only | grep -qvx "$theme"; then
+  exit 0
+fi
+
+current=$(
+  sed -n 's/.*"version"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' "$theme" |
+    head -n 1
+)
+
+case "$current" in
+  [0-9]*.[0-9]*.[0-9]*) ;;
+  *)
+    echo "pre-commit: no MAJOR.MINOR.PATCH version found in $theme" >&2
+    exit 1
+    ;;
+esac
+
+major=${current%%.*}
+rest=${current#*.}
+minor=${rest%%.*}
+patch=${rest#*.}
+
+case "${major}${minor}${patch}" in
+  *[!0-9]*)
+    echo "pre-commit: version '$current' in $theme is not numeric" >&2
+    exit 1
+    ;;
+esac
+
+next="${major}.${minor}.$((patch + 1))"
+line=$(grep -n '"version"' "$theme" | head -n 1 | cut -d: -f1)
+
+tmp=$(mktemp "${TMPDIR:-/tmp}/theme.json.XXXXXX")
+sed "${line}s/\(\"version\"[[:space:]]*:[[:space:]]*\"\)[^\"]*\"/\1${next}\"/" "$theme" >"$tmp"
+mv "$tmp" "$theme"
+git add -- "$theme"
+
+echo "pre-commit: $theme version $current -> $next"

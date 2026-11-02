@@ -3,7 +3,7 @@
 	"name": "Better Vertical Tabs",
 	"description": "Vertical Sidebery tabs with a collapsible Firefox sidebar.",
 	"author": "Joshi",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"homepage": "https://codeberg.org/Joshi/chrome",
 	"style": {
 		"chrome": "userChrome.css",
