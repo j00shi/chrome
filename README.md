@@ -154,7 +154,6 @@ If you want to use Sine to manage the styles, continue to the [Sine Install](#in
 ## TODO
 
 - Bugged when fullHide is disabled: Firefox now hides sidebar when in fullscreen. Causes website to go below sidebar
-- Does not work when sidebar is on the right.
-- Animation for full screen top bar possible (on Windows and Linux)?
-- Add a SASS compile script (see script branch)
-- Can see text behind a very rounded sidebar
+- Does not work when sidebar is on the right
+- Add a SASS compile script (see script branch)?
+- Make the audio button adapt to the size of the sidebar (looks odd in compact mode)
