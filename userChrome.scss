@@ -12,6 +12,7 @@
 
 #sidebar-container {
 	width: #{$sidebar-width} !important;
+	visibility: hidden;
 }
 
 // Sidebar base styling for Sidebery or similar extensions
